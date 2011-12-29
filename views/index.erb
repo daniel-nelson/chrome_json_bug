@@ -25,8 +25,10 @@ var request = makeHttpObject();
 request.open("GET", "/docs", false);
 request.setRequestHeader("Accept", "application/json");
 request.send(null);
-console.log(request.responseText);
-
+document.write('<h3 style="margin-top: 50px">XHR results</h3>');
+document.write('<div>');
+document.write(request.responseText.replace(/</g, '&lt;').replace(/>/g, '&gt;').replace(/\n/g, '<br />'));
+document.write('</div>');
   </script>
   </body>
 </html>
